@@ -1,0 +1,77 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Dialog>
+        <beginButton>
+            <Button
+                text="Kaydet"
+                press="handleAttendeeSave"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                text="İptal"
+                press="handleAttendeeDialogClose"
+            />
+        </endButton>
+        <content>
+            <f:Form
+                id="FormChange354"
+                editable="true"
+            >
+                <f:title>
+                    <core:Title text="{i18n>attendeeDialogTitle}" />
+                </f:title>
+                <f:layout>
+                    <f:ResponsiveGridLayout
+                        labelSpanXL="3"
+                        labelSpanL="3"
+                        labelSpanM="3"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="4"
+                        emptySpanL="4"
+                        emptySpanM="4"
+                        emptySpanS="0"
+                        columnsXL="1"
+                        columnsL="1"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    />
+                </f:layout>
+                <f:formContainers>
+                    <f:FormContainer>
+                        <f:formElements>
+                            <f:FormElement label="{i18n>name}">
+                                <f:fields>
+                                    <Input
+                                        value="{Name}"
+                                        id="name"
+                                    />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="{i18n>surname}">
+                                <f:fields>
+                                    <Input
+                                    value="{Surname}"
+                                        id="surname"
+                                    />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="{i18n>city}">
+                                <f:fields>
+                                    <Input
+                                    value="{Sehir}"
+                                        id="city"
+                                    />
+                                </f:fields>
+                            </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer>
+                </f:formContainers>
+            </f:Form>
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

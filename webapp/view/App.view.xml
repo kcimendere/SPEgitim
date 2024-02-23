@@ -1,0 +1,70 @@
+<mvc:View
+    controllerName="com.sp.zattendee.controller.App"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    displayBlock="true"
+>
+    <App id="app">
+        <Page
+            title="{i18n>title}"
+            class="sapUiContentPadding"
+        >
+            <content>
+                <Table
+                    delete="handleRowDelete"
+                    mode="Delete"
+                    id="idProductsTable"
+                    items="{/AtendeeSet}"
+                >
+                    <headerToolbar>
+                        <Toolbar>
+                        <SearchField search="handleAttendeeSearch" />
+                            <ToolbarSpacer />
+                            <Button
+                                icon="sap-icon://add"
+                                press="handlePressAddNewAttendee"
+                            />
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column>
+                            <Text text="ID" />
+                        </Column>
+                        <Column>
+                            <Text text="İsim" />
+                        </Column>
+                        <Column>
+                            <Text text="Soyisim" />
+                        </Column>
+                        <Column>
+                            <Text text="Şehir" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Active" press="handleAttendeeListItemPress" vAlign="Middle">
+                            <cells>
+                                <Text text="{Id}" />
+                                <Text text="{Name}" />
+                                <Text text="{Surname}" />
+                                <Text text="{Sehir}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </content>
+        <footer>
+            <OverflowToolbar id="otbFooter">
+                <Button
+                    icon="sap-icon://alert"
+                    text="{=${message>/}.length}"
+                    visible="{=${message>/}.length > 0}"
+                    type="Emphasized"
+                    press="onMessagePopoverPress">
+                </Button>
+                <ToolbarSpacer/>
+            </OverflowToolbar>
+        </footer>
+        </Page>
+    </App>
+</mvc:View>
